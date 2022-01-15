@@ -4,9 +4,9 @@ echo "Enter three numbers"
 read a
 read b
 read c
-opr1=$(( $a + $($b + $c)))
+opr1=$(( $a + $(($b + $c))))
 opr2=$(( $($a % $b) + $c ))
-opr3=$(( $c + $($a / $b)))
+opr3=$(( $c + $(($a / $b))))
 opr4=$(( $($a + $b) + $c ))
 
 echo "Among these 3 numbers:" $a $b $c 
