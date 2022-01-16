@@ -15,5 +15,5 @@ do
 done
 
 echo "Sum=$sum"
-avg=$(( $(($sum / $N)) | bc ));
-echo "scale=3;$avg / 1" | bc 
+avg=`echo "$sum $N" | awk '{a=$1/$2; print a}'`
+echo "Average=$avg"
