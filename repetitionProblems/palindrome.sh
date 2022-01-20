@@ -1,29 +1,27 @@
 #!/bin/bash -x
 
-
+read -p "Enter 1st number " num1
+read -p "Enter 2nd number " num2
 function palindrome() {
-   n in $1
-if [ $originalN -eq $reversedN ]
-then
-     if [ $originalN -eq $m ]
-     then
-         echo "$originalN and $m both number are PALINDROME"
-     else
-          echo "$originalN and $m are not a PALINDROME"
-     fi
-fi
+	rev=0
+	number=$1
+
+	while [ $number -gt 0 ]
+	do
+		rem=$((number % 10))
+		rev=$((rev * 10 + rem))
+		number=$((number / 10))
+	done
+
+	if [ $rev -eq $1 ]
+	then
+		echo "$1 is a palindrome"
+	else
+		echo "$1 is not a palindrome"
+	fi
 }
 
-echo "enter the first numbers:   "
-read n
-echo "enter the second numbers:   "
-read m
-reversedN=0
-originalN=$n
-while [ $n -ne 0 ]
-do
-    remainder=$(($n%10))
-    reversedN=$((($reversedN*10)+remainder))
-    n=$(($n/10))
-done
-palindrome
+result1=$( palindrome $num1 )
+result2=$( palindrome $num2 )
+echo "$result1"
+echo "$result2"

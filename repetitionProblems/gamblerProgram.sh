@@ -5,7 +5,7 @@ goal=200
 bet=1
 betcount=0
 win=0
-while [ $cash -lt $goal -a $cash -gt $bet ]
+while [ $cash -lt $goal ] && [ $cash -gt $bet ]
 do
    randomNumber=$((RANDOM%2))
    if [ $randomNumber -eq 1 ]
@@ -23,5 +23,5 @@ then
 else
      echo "Gambler loose"
 fi
-echo "no of times bet=$betcount++"
-echo "no of times win=$win++"
+echo "no of times bet=$betcount"
+echo "no of times win=$win"
