@@ -4,14 +4,15 @@ n=$1
 powerOfTwo=1
 echo "Power of two:"
    i=1
-	while [[ i<=n ]]
+	while [[ i -le $n ]]
    do
    echo $powerOfTwo
-   powerOfTwo=$((2*$powerOfTwo))
-	if [ $powerOfTwo -eq 256 ]
-	then
-	break;
-	fi
+   powerOfTwo=$(($powerOfTwo*2))
+		if [ $powerOfTwo == 256 ]
+		then
+			echo $powerOfTwo
+			break;
+		fi
 	((i++))
    done
 
